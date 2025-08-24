@@ -20,6 +20,7 @@ export default {
     'bootstrap-rtl/dist/css/bootstrap-rtl.min.css',
     '~/assets/scss/custom-bootstrap.scss',
     'bootstrap-icons/font/bootstrap-icons.css',
+
   ],
 
 
@@ -41,7 +42,15 @@ export default {
   },
 
   build: {
-    transpile: ['bootstrap-vue']
+    transpile: ['bootstrap-vue'],
+    loaders: {
+      scss: {
+        sassOptions: { quietDeps: true }
+      },
+      sass: {
+        sassOptions: { quietDeps: true }
+      }
+    }
   },
 
 }
