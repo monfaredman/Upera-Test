@@ -15,7 +15,7 @@
           style="background: white; color: black; border-radius: 1rem !important; font-size: 1rem !important;"></b-icon>
         <b-icon v-show="activeIndex < newMovies.length - swiperOptions.slidesPerView" class="nav-btn next rounded-lg"
           aria-label="Next" @click="slideNext" icon="chevron-left"
-          style="background: white; color: black; border-radius: 1rem !important; font-size: 1rem;"></b-icon>
+          style="background: white; color: black; border-radius: 1rem !important; font-size: 1rem !important;"></b-icon>
       </div>
     </div>
   </div>
@@ -54,11 +54,11 @@ export default {
         observeParents: true,
         // Remove navigation config - handle manually
         breakpoints: {
-          1200: { slidesPerView: 3 },
-          992: { slidesPerView: 2 },
-          768: { slidesPerView: 2 },
-          576: { slidesPerView: 1 },
-          0: { slidesPerView: 1 }
+          1200: { slidesPerView: 3.5 },
+          992: { slidesPerView: 3.5 },
+          768: { slidesPerView: 3.5 },
+          576: { slidesPerView: 1.5 },
+          0: { slidesPerView: 1.5 }
         }
       },
       activeIndex: 0
@@ -102,6 +102,10 @@ export default {
 <style scoped>
 .swiper-slide {
   flex-shrink: 0;
+}
+
+h5 {
+  font-family: 'dana-700';
 }
 
 .new-movies-slider {
@@ -159,5 +163,16 @@ export default {
 
 .new-movies-nav .nav-btn:active {
   transform: translateY(-50%) scale(0.92);
+}
+
+@media (max-width: 575.98px) {
+  .new-movies-nav {
+    display: none;
+  }
+
+  .new-movies-slider h5 {
+    font-size: 0.95rem;
+    /* decreased font size on mobile */
+  }
 }
 </style>

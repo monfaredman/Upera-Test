@@ -58,7 +58,7 @@ export default {
                     992: { slidesPerView: 4.5 },
                     768: { slidesPerView: 3.5 },
                     576: { slidesPerView: 2.5 },
-                    0: { slidesPerView: 1.5 }
+                    0: { slidesPerView: 2.5 }
                 }
             }
         }
@@ -118,6 +118,10 @@ export default {
     flex-shrink: 0;
 }
 
+h5 {
+    font-family: 'dana-700';
+}
+
 .top-rated-slider {
     position: relative;
     direction: rtl;
@@ -140,7 +144,23 @@ export default {
 
 .swiper-slide h6 {
     color: white;
-    font-size: 14px;
+    font-size: 1.2rem;
     text-align: center;
+}
+
+/* Decrease title size on small screens */
+@media (max-width: 576px) {
+    .top-rated-slider h5 {
+        font-size: 14px;
+    }
+
+    .top-rated-slider {
+
+        margin-top: 1rem;
+    }
+
+    .swiper-slide h6 {
+        font-size: 0.8rem;
+    }
 }
 </style>

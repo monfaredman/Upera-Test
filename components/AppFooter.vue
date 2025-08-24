@@ -1,12 +1,14 @@
 <template>
   <b-container fluid class="p-0">
-    <b-row no-gutters style="box-shadow: 0 -2px 15px #525252;">
-      <b-col v-for="(item, index) in footerItems" :key="item.title" cols="12" md="3"
+    <b-row no-gutters class="app-footer-row">
+      <b-col v-for="(item, index) in footerItems" :key="item.title" cols="6" md="3"
         style="border: 0.8px solid #525252 ;border-bottom: none;"
         class="p-4 text-white d-flex flex-column align-items-start"
         :style="{ backgroundColor: index % 2 === 0 ? '#404040' : '#373737' }">
-        <img :src="item.icon" height="40" />
-        <h6 class="my-3" style="font-size: large;">{{ item.title }}</h6>
+        <div class="icon-title-wrapper">
+          <img :src="item.icon" height="40" />
+          <h6 class="my-3" style="font-size: large;">{{ item.title }}</h6>
+        </div>
         <p class="text-right">{{ item.description }}</p>
       </b-col>
     </b-row>
@@ -47,3 +49,75 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.app-footer-row {
+  box-shadow: 0 -2px 15px #525252;
+}
+
+.icon-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  /* Space between icon and title */
+}
+
+.app-footer-row h6 {
+  font-family: 'dana-700';
+}
+
+.app-footer-row p {
+  font-family: 'dana';
+
+}
+
+@media (max-width: 767.98px) {
+  .app-footer-row {
+    border-radius: 2rem;
+    box-shadow: none;
+    border: none;
+    align-content: center;
+    justify-content: center;
+    background-color: #000;
+    gap: 1.2rem;
+    /* gap-1 */
+    padding: 0rem 0.6rem;
+    /* give space so outer items don't touch edges */
+    font-size: 0.7rem;
+    /* base smaller text */
+  }
+
+  .app-footer-row>[class*="col-"] {
+    border: none !important;
+    border-radius: 1.2rem;
+    flex: 0 0 46%;
+    padding: 0.5rem !important;
+  }
+
+  .icon-title-wrapper {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+
+    /* Ensure row layout on mobile */
+  }
+
+  .app-footer-row h6 {
+    font-size: 0.8rem !important;
+    /* reduced from 1rem */
+    margin: 0;
+    text-align: right !important;
+    /* Adjust spacing */
+  }
+
+  .app-footer-row p {
+    font-size: 0.7rem;
+    /* reduced from 0.85rem */
+  }
+
+  /* Smaller icon on mobile (overrides height="40") */
+  .app-footer-row img {
+    height: 28px !important;
+  }
+}
+</style>

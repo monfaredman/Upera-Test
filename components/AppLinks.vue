@@ -4,39 +4,40 @@
       <div class="row align-items-center">
         <!-- Right side -->
         <div class="col-12 col-lg-6 text-center">
-          <img src="@/assets/images/apps-images.png" alt="Apps" class="img-fluid apps-image" />
+          <img src="@/assets/images/apps-images.png" alt="Apps" class="apps-image" />
         </div>
         <!-- Left side -->
-        <div class="col-12 col-lg-6 mb-4 mb-lg-0" dir="rtl">
+        <div class="col-12 col-lg-6 mb-4 mb-lg-0 align-self-end" dir="rtl">
           <h2 class="title mb-5 text-right">هر لحظه و هرجا با آپرا فیلم ببین!</h2>
 
           <div class="buttons-wrapper">
-            <div class="d-flex justigy-content-start">
-
+            <div class="buttons-row">
               <b-button variant="link" class="text-white d-flex align-items-center flex-shrink-0 hide-mobile"
-                style="width: 150px;">
-                <b-icon icon="phone" class="ml-2"></b-icon>
+                style="width: 150px;"> <b-icon icon="phone" class="ml-2"></b-icon>
                 <span class="mr-2">اپ موبایل</span>
               </b-button>
-              <b-button variant="primary" v-for="link in appLinks.filter((item) => item.type === 'mobile')"
-                :key="link.label" :href="link.href" class="app-btn d-flex align-items-center mx-2"
-                style="width: 150px; height: 40px;">
-                <b-icon :icon="link.icon" class="icon"></b-icon>
-                <span class="label">{{ link.label }}</span>
-              </b-button>
+              <div class="d-flex flex-row buttons-row button-mobile-col">
+                <b-button variant="primary" v-for="link in appLinks.filter((item) => item.type === 'mobile')"
+                  :key="link.label" :href="link.href" class="app-btn d-flex align-items-center equal-btn">
+                  <b-icon :icon="link.icon" class="icon"></b-icon>
+                  <span class="label">{{ link.label }}</span>
+                </b-button>
+              </div>
             </div>
-            <div class="d-flex justigy-content-start mt-4">
+            <div class="buttons-row mt-4">
               <b-button variant="link" class="text-white d-flex align-items-center flex-shrink-0 hide-mobile"
                 style="width: 150px;">
                 <b-icon icon="tv" class="ml-2"></b-icon>
                 <span class="mr-2">اپ تلویزیون</span>
               </b-button>
-              <b-button variant="primary" v-for="link in appLinks.filter((item) => item.type === 'tv')" style=" width:
-                150px; height: 40px;" :key="link.label" :href="link.href"
-                class="app-btn d-flex align-items-center mx-2">
-                <b-icon :icon="link.icon" class="icon"></b-icon>
-                <span class="label">{{ link.label }}</span>
-              </b-button>
+              <div class="d-flex flex-row buttons-row button-mobile-col">
+                <b-button variant="primary" v-for="link in appLinks.filter((item) => item.type === 'tv')"
+                  :key="link.label" :href="link.href" class="app-btn d-flex align-items-center equal-btn">
+                  <b-icon :icon="link.icon" class="icon"></b-icon>
+                  <span class="label">{{ link.label }}</span>
+                </b-button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -68,12 +69,53 @@ const appLinks = [
   font-size: 1.9rem;
   font-weight: 700;
   line-height: 1.6;
+  font-family: 'dana-600';
 }
 
 .buttons-wrapper {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: row;
+  gap: .75rem;
+}
+
+.equal-btn {
+  flex: 1 1 auto;
+  /* was 1 1 0 */
+  /* removed: width: auto !important; so explicit widths can apply */
+  min-width: 0;
+  height: 40px;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.buttons-row .app-btn:nth-child(odd) {
+  width: 9rem;
+  max-width: 12rem;
+}
+
+.buttons-row .app-btn:nth-child(even) {
+  width: 12rem;
+  max-width: 14rem;
+}
+
+.label-btn {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 10px;
+  transition: .25s;
+}
+
+.label-btn:hover {
+  background: #1d1d1d;
+  border-color: #333;
+  transform: translateY(-2px);
 }
 
 .app-btn {
@@ -104,12 +146,43 @@ const appLinks = [
 }
 
 .apps-image {
-  max-width: 420px;
+  width: 420px;
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+@media (max-width: 575px) {
+  .apps-image {
+    width: 400px;
+  }
+
+  .buttons-row {
+    flex-direction: column;
+  }
+
+  .button-mobile-col {
+    flex-direction: row !important;
+    justify-content: start !important;
+  }
+
+  .equal-btn {
+    width: 20% !important;
+    min-width: 9rem !important;
+    flex: none;
+  }
+
+  .app-links-section {
+    padding: 1rem 0;
+  }
 }
 
 @media (max-width: 991px) {
   .title {
     text-align: right !important;
+    font-size: 1.1rem;
+    margin-bottom: 1rem !important;
+    margin-top: 2rem !important;
   }
 
   .buttons-wrapper {
