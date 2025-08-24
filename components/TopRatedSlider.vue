@@ -34,12 +34,6 @@ export default {
         Swiper,
         SwiperSlide
     },
-    props: {
-        items: {
-            type: Array,
-            required: true,
-        },
-    },
     data() {
         return {
             itemsToShow: 20,

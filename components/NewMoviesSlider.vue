@@ -23,7 +23,6 @@
 
 <script>
 import coverImage from '@/assets/images/new-feature.png'
-// Swiper 5 imports for vue-awesome-swiper v4
 import 'swiper/css/swiper.css'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 
@@ -52,7 +51,6 @@ export default {
         watchOverflow: true,
         observer: true,
         observeParents: true,
-        // Remove navigation config - handle manually
         breakpoints: {
           1200: { slidesPerView: 3.5 },
           992: { slidesPerView: 3.5 },
@@ -69,18 +67,15 @@ export default {
       const inst = this.$refs.newMoviesSwiper && this.$refs.newMoviesSwiper.$swiper
       if (inst) {
         inst.update()
-        // Set initial activeIndex
         this.activeIndex = inst.activeIndex || 0
       }
     })
   },
   methods: {
     onSlideChange() {
-      // Get swiper instance from ref
       const inst = this.$refs.newMoviesSwiper && this.$refs.newMoviesSwiper.$swiper
       if (inst) {
         this.activeIndex = inst.activeIndex || 0
-        console.log('slide changed, activeIndex:', this.activeIndex)
       }
     },
     slideNext() {

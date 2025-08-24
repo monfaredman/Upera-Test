@@ -1,6 +1,6 @@
 export default {
-  target: 'server',
-  ssr: true,
+  target: 'static',
+  ssr: false,
   srcDir: '.',
 
 
@@ -11,9 +11,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'VOD app built with Nuxt 2 & Video.js' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+
   },
 
 
@@ -30,14 +28,6 @@ export default {
     { src: '~/plugins/swiper.client.js', mode: 'client' },
   ],
 
-
-  // modules: [
-  // 'nuxt-i18n',
-  // ],
-
-
-  // If you want to use @nuxtjs/i18n instead, disable 'nuxt-i18n' above and enable this:
-  // buildModules: ['@nuxtjs/i18n'],
 
 
   i18n: {

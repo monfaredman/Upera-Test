@@ -3,8 +3,8 @@
     <Header />
     <Banner />
     <AppLinks />
-    <NewMoviesSlider :newMovies="newMovies" />
-    <TopRatedSlider :topRated="topRated" />
+    <NewMoviesSlider />
+    <TopRatedSlider />
     <ChildSection />
     <LogoSection />
     <Footer />
@@ -23,11 +23,6 @@ import LogoSection from '../components/LogoSection.vue'
 
 export default {
   components: { Header, Banner, AppLinks, NewMoviesSlider, TopRatedSlider, ChildSection, Footer, LogoSection },
-  data() {
-    return {
-      newMovies: [],    // Fetch from API or static
-      topRated: []      // Fetch from API or static
-    }
-  }
+
 }
 </script>
