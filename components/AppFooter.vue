@@ -59,7 +59,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: start;
-  /* Space between icon and title */
 }
 
 .app-footer-row h6 {
@@ -80,11 +79,8 @@ export default {
     justify-content: center;
     background-color: #000;
     gap: 1.2rem;
-    /* gap-1 */
     padding: 0rem 0.6rem;
-    /* give space so outer items don't touch edges */
     font-size: 0.7rem;
-    /* base smaller text */
   }
 
   .app-footer-row>[class*="col-"] {
@@ -98,24 +94,18 @@ export default {
     flex-direction: row;
     gap: 0.5rem;
     align-items: center;
-
-    /* Ensure row layout on mobile */
   }
 
   .app-footer-row h6 {
     font-size: 0.8rem !important;
-    /* reduced from 1rem */
     margin: 0;
     text-align: right !important;
-    /* Adjust spacing */
   }
 
   .app-footer-row p {
     font-size: 0.7rem;
-    /* reduced from 0.85rem */
   }
 
-  /* Smaller icon on mobile (overrides height="40") */
   .app-footer-row img {
     height: 28px !important;
   }

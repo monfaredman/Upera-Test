@@ -14,7 +14,6 @@
     width: 100%;
     background-color: #000;
     margin-bottom: 4rem;
-    /* Dark background */
     padding: 0 1rem;
 }
 
@@ -25,7 +24,6 @@
     object-fit: contain;
 }
 
-/* Tablet */
 @media (max-width: 768px) {
     .logo-section {
         margin-bottom: 3rem;
@@ -38,7 +36,6 @@
     }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
     .logo-section {
         margin-bottom: 2rem;

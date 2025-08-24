@@ -2,11 +2,9 @@
   <section class="app-links-section d-flex align-items-center">
     <div class="container">
       <div class="row align-items-center">
-        <!-- Right side -->
         <div class="col-12 col-lg-6 text-center">
           <img src="@/assets/images/apps-images.png" alt="Apps" class="apps-image" />
         </div>
-        <!-- Left side -->
         <div class="col-12 col-lg-6 mb-4 mb-lg-0 align-self-end" dir="rtl">
           <h2 class="title mb-5 text-right">هر لحظه و هرجا با آپرا فیلم ببین!</h2>
 
@@ -86,8 +84,6 @@ const appLinks = [
 
 .equal-btn {
   flex: 1 1 auto;
-  /* was 1 1 0 */
-  /* removed: width: auto !important; so explicit widths can apply */
   min-width: 0;
   height: 40px;
   justify-content: center;

@@ -16,13 +16,11 @@
 
 <style scoped>
 .banner {
-  /* defaults; override by: <Banner style="--banner-image: url('/other.jpg'); --banner-height: 700px;" /> */
   --banner-image: url('../assets/images/banner.png');
   --banner-height: 700px;
   --banner-min-width: 300px;
   --banner-min-height: 200px;
   background: var(--banner-image) center/cover no-repeat;
-  /* responsive height: min desired, fluid midpoint, max cap */
   height: clamp(var(--banner-min-height), 65vh, var(--banner-height));
   width: 100%;
   min-width: var(--banner-min-width);
@@ -37,7 +35,6 @@ h3 {
   font-family: 'dana-600' !important;
 }
 
-/* Tablet */
 @media (max-width: 992px) {
   .banner {
     height: clamp(280px, 55vh, 600px);
@@ -52,7 +49,6 @@ h3 {
   }
 }
 
-/* Mobile */
 @media (max-width: 576px) {
   .banner {
     height: clamp(240px, 38vh, 520px);

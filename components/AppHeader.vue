@@ -97,7 +97,6 @@ export default {
   flex-direction: row !important;
 }
 
-/* explicit flex styling on the navbar root (scoped requires our custom class) */
 .app-header-bar {
   display: flex !important;
   flex-direction: row;
@@ -109,15 +108,12 @@ export default {
   transition: background-color 0.3s ease;
 }
 
-/* align children */
 .app-header-bar>* {
   align-self: center;
 }
 
-/* Set width for b-navbar-brand */
 .brand-width {
   width: 130px;
-  /* Adjust the width as needed */
   margin-right: 0;
   text-align: right;
 }
@@ -133,7 +129,6 @@ export default {
   opacity: 0.95;
 }
 
-/* d-flex now works (conflicting bootstrap-rtl removed) */
 @media (max-width: 767.98px) {
   .hide-mobile {
     display: none !important;

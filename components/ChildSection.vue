@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
     <div class="child-section-container">
-      <!-- First Column -->
       <b-col md="3" class="d-flex flex-column align-items-start justify-content-start">
         <div class="d-flex align-items-center justify-content-start mb-4">
           <img src="@/assets/images/child-icon.png" alt="Bob Image" class="img-fluid" />
@@ -11,7 +10,6 @@
           style="width: 340px; height: 240px;" />
       </b-col>
 
-      <!-- Second Column -->
       <b-col md="6" class="text-right mid-col">
         <div class="mb-4 feature-box"
           style="background-color: #1c2163; padding: 1rem; border-radius: 8px; display: inline-block; width: fit-content;">
@@ -26,7 +24,6 @@
         </div>
       </b-col>
 
-      <!-- Third Column -->
       <b-col md="3" class="text-center d-flex flex-row align-items-center justify-content-end mb-4 cta-col">
         <img src="@/assets/images/bob-image.png" alt="Icon" class="me-2 d-md-none mobile-icon"
           style="width: 80px; height: 40px;" />
@@ -117,13 +114,11 @@
 
   }
 
-  /* Replace the generic alt selector */
   .hero-icon {
     width: 100% !important;
     height: auto !important;
   }
 
-  /* Ensure mobile icon keeps its size (optional explicit override) */
   .mobile-icon {
     width: 180px !important;
     height: 140px !important;
@@ -132,7 +127,6 @@
 
   img[alt="Bob Image"] {
     width: 48px;
-    /* decreased from 64px */
     height: auto;
     margin-left: .5rem;
   }

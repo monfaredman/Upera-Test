@@ -142,7 +142,6 @@ h5 {
     text-align: center;
 }
 
-/* Decrease title size on small screens */
 @media (max-width: 576px) {
     .top-rated-slider h5 {
         font-size: 14px;

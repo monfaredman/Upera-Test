@@ -123,7 +123,6 @@ h5 {
   inset: 0;
   direction: rtl;
   z-index: 20;
-  /* added */
 }
 
 .new-movies-nav .nav-btn {
@@ -167,7 +166,6 @@ h5 {
 
   .new-movies-slider h5 {
     font-size: 0.95rem;
-    /* decreased font size on mobile */
   }
 }
 </style>
